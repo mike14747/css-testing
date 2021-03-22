@@ -96,3 +96,8 @@ main {
 
 .percentage {
 }
+
+h1 {
+    font-size: 4rem;
+    color: rgba(248, 138, 35, 1);
+}

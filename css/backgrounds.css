@@ -1,0 +1,50 @@
+div {
+    width: 500px;
+    height: 250px;
+    border: 1px #000000 solid;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+.div1 {
+    background-color: cornflowerblue;
+}
+
+.div2 {
+    background: linear-gradient(cornflowerblue, white);
+}
+
+.div3 {
+    background-color: cornflowerblue;
+    background-image: url('../images/wifi-icon.png');
+}
+
+.div4 {
+    background-color: cornflowerblue;
+    background-image: url('../images/wifi-icon.png'), linear-gradient(cornflowerblue, white);
+}
+
+.div5 {
+    background-color: cornflowerblue;
+    background-image: url('../images/wifi-icon.png'), linear-gradient(cornflowerblue, white);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.div6 {
+    background-color: cornflowerblue;
+    background-image: url('../images/wifi-icon.png'), url('../images/wifi-icon.png'), linear-gradient(cornflowerblue, white);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+}
+
+.div7 {
+    background-color: cornflowerblue;
+    background-image: url('../images/wifi-icon.png'), linear-gradient(cornflowerblue, white);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 128px;
+}

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/my_reset.css">
     <link rel="stylesheet" type="text/css" href="css/global.css" />
     <link rel="stylesheet" type="text/css" href="css/my_margins_padding.css" />
     <link rel="stylesheet" type="text/css" href="css/fonts.css" />
@@ -19,8 +20,11 @@
             <h1>CSS Fonts Testing</h1>
         </div>
     </header>
+
+    <hr />
+    
     <main>
-        <section>
+        <section class="mb-4">
             <article class="hand">
                 <p>
                     This is going to be an article in a handwriting font.
@@ -32,6 +36,21 @@
                     app.listen(3000, () => console.log('App is listening on port 3000!'));
                 </p>
             </article>
+        </section>
+
+        <hr />
+
+        <section class="viewport">
+            <p>
+                In this section, I'm testing out adjusting the font sizes based upon viewport size.
+            </p>
+            <h1>This is an h1 tag</h1>
+            <h2>This is an h2 tag</h2>
+            <h3>This is an h3 tag</h3>
+            <h4>This is an h4 tag</h4>
+            <h5>This is an h5 tag</h5>
+            <h6>This is an h6 tag</h6>
+            <p>And lastly, another paragraph tag.</p>
         </section>
     </main>
     <footer>

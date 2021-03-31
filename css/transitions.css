@@ -1,0 +1,98 @@
+.header {
+    border-bottom: 1px #cccccc solid;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navItem {
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    position: relative;
+}
+
+.navItem::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    height: 3px;
+    content: "";
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.navItem:hover {
+    color: coral;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.navItem:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: coral;
+    transition: 0.3s;
+}
+
+.nav2 {
+    margin-top: 3rem;
+    border-bottom: 1px #cccccc solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown {
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    position: relative;
+}
+
+.dropdown::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    height: 3px;
+    content: "";
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.dropdown:hover {
+    color: coral;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.dropdown:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: coral;
+    transition: 0.3s;
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media (min-width: 576px) {
+    .navItem,
+    .dropdown {
+        margin: 0 1rem;
+    }
+}

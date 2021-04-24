@@ -187,37 +187,31 @@ a {
     color: #5067ff;
     text-decoration: none;
     position: relative;
-    transition: 0.30s;
+    transition: 0.3s;
 }
 
 a:link {
     color: #5067ff;
     text-decoration: none;
-    transition: color 0.30s;
+    transition: color 0.3s;
 }
 
 a:visited {
     color: #b200e9;
     text-decoration: none;
-    transition: color 0.30s;
+    transition: color 0.3s;
 }
 
 a:focus {
     outline: 1px rgba(0, 0, 0, 0.15) dashed;
     outline-offset: 0.25rem;
-    transition: 0.30s;
+    transition: 0.3s;
 }
 
 a:hover {
     color: #ff7f50;
     text-decoration: none;
-    transition: color 0.30s;
-}
-
-a:active {
-    color: #e93f00;
-    text-decoration: none;
-    transition: color 0.30s;
+    transition: color 0.3s;
 }
 
 a:not([href]),
@@ -232,7 +226,7 @@ a[href]::after {
     left: 50%;
     width: 1px;
     height: 1px;
-    content: '';
+    content: "";
     background-color: transparent;
     transition: width 0.3s, left 0.3s, background-color 1s;
 }
@@ -242,11 +236,6 @@ a[href]:hover::after {
     left: 0;
     background-color: coral;
     transition: width 0.3s, left 0.3s, background-color 1s;
-}
-
-a[href]:active::after {
-    background-color: #e93f00;
-    transition: background-color 1s;
 }
 
 pre,

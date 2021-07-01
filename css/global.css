@@ -1,0 +1,83 @@
+:root {
+    --theme-color-1: rgb(255, 127, 80, 1);
+    --theme-color-2: rgba(0, 128, 0, 1);
+    --link-color: #5067ff;
+    --link-color-hover: #ff7f50;
+    --link-color-visited: #b200e9;
+}
+
+a {
+    color: #5067ff;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+}
+
+a:link {
+    color: #5067ff;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:visited {
+    color: #b200e9;
+    color: var(--link-color-visited);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:focus {
+    outline: 1px rgba(0, 0, 0, 0.15) dashed;
+    outline-offset: 0.25rem;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #ff7f50;
+    color: var(--link-color-hover);
+    text-decoration: none;
+    /* text-decoration: underline; */
+    transition: color 0.3s;
+}
+
+a:active {
+    color: #ff7f50;
+    color: var(--link-color-hover);
+    text-decoration: none;
+    /* text-decoration: underline; */
+}
+
+a:not([href]),
+a:not([href]):hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* the following is the animated underline effect... disabled by default */
+/* if you enable it, change the above "a:hover" and "a:active" to "text-decoration: none;" */
+a[href]::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    height: 2px;
+    content: "";
+    background-color: transparent;
+    transition: width 0.3s, left 0.3s, background-color 1s;
+}
+
+a[href]:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: #ff7f50;
+    background-color: var(--link-color-hover);
+    transition: width 0.3s, left 0.3s, background-color 1s;
+}
+
+a[href]:active::after {
+    background-color: #ff7f50;
+    background-color: var(--link-color-hover);
+    transition: background-color 1s;
+}

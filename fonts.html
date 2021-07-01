@@ -64,10 +64,24 @@
                 This is a test to see if the text and bottom border have a transition effect on hover.
             </div>
         </section>
+
+        <section>
+            <p>
+                <a href="_blank">This is a Link</a>
+            </p>
+
+            <p>
+                buffer paragraph
+            </p>
+        </section>
     </main>
     <footer>
 
     </footer>
+
+    <script>
+        console.log(window.getComputedStyle(document.documentElement).getPropertyValue('--theme-color-2'));
+    </script>
 </body>
 
 </html>

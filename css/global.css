@@ -1,9 +1,34 @@
 :root {
-    --theme-color-1: rgb(255, 127, 80, 1);
-    --theme-color-2: rgba(0, 128, 0, 1);
-    --link-color: #5067ff;
-    --link-color-hover: #ff7f50;
-    --link-color-visited: #b200e9;
+    /* start theme colors specific to this app */
+
+    --theme-color-1: #8fbc8f;
+    --theme-color-2: #8cbed6;
+    --theme-color-3: #fdd5b1;
+
+    /* end theme colors specific to this app */
+
+    --mg-beige: #f5f5dc;
+    --mg-black: #000000; /* html black */
+    --mg-blue: #214fc6;
+    --mg-cream: #fffdd0;
+    --mg-dark: #232323;
+    --mg-green: #228B22; /* html forestgreen */
+    --mg-gray: #808080; /* html gray */
+    --mg-gray-1: #f5f5f5; /* html whitesmoke */
+    --mg-gray-2: #d3d3d3; /* html lightgray */
+    --mg-gray-3: #c0c0c0; /* html silver */
+    --mg-gray-4: #a9a9a9; /* html darkgray... it's a bug that its lighter than regular gray */
+    --mg-gray-5: #808080; /* html gray */
+    --mg-gray-6: #585858;
+    --mg-gray-7: #232323;
+    --mg-orange: #ff7518; /* html pumpkin */
+    --mg-orange-soft: #fcd581;
+    --mg-purple: #6f42c1;
+    --mg-red: #dc143c; /* html crimson */
+    --mg-red-dark: #b22222; /* html firebrick */
+    --mg-white: #ffffff; /* html white */
+    --mg-yellow: #fff44f; /* html lemon */
+    --mg-yellow-pale: #ffffd5;
 }
 
 *,
@@ -14,14 +39,24 @@
     padding: 0;
 }
 
+/* for semi-full height websites with next.js use #__next and with react use #root */
+/* #__next,
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} */
+
+html,
 body {
     margin: 0;
-    font-family: Calibri, "Gill Sans", Geneva, Noto, Arial, Helvetica,
-        sans-serif;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.25;
-    color: #212529;
+    height: 100%;
+    line-height: 1.50;
+    color: var(--mg-dark);
     background-color: #ffffff;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -46,7 +81,7 @@ section {
 
 /* End HTML5 display-role reset for older browsers */
 
-[tabindex="-1"]:focus:not(:focus-visible) {
+[tabindex='-1']:focus:not(:focus-visible) {
     outline: 0 !important;
 }
 
@@ -96,12 +131,12 @@ h4 {
 
 h5 {
     font-size: 1.25rem;
-    font-size: clamp(1.1rem, 0.7vw + 0.7rem, 1.50rem);
+    font-size: clamp(1.1rem, 0.7vw + 0.7rem, 1.5rem);
 }
 
 h6 {
     font-size: 1rem;
-    font-size: clamp(1rem, 0.55vw + 0.55rem, 1.20rem);
+    font-size: clamp(1rem, 0.55vw + 0.55rem, 1.2rem);
 }
 
 p {
@@ -170,7 +205,7 @@ blockquote {
 }
 
 .blockquote-footer::before {
-    content: "\2014\00A0";
+    content: '\2014\00A0';
 }
 
 b,
@@ -199,22 +234,20 @@ sup {
 }
 
 a {
-    color: #5067ff;
-    color: var(--link-color);
+    color: var(--mg-blue);
     text-decoration: none;
     transition: 0.3s;
 }
 
 a:link {
-    color: #5067ff;
-    color: var(--link-color);
+    color: var(--mg-blue);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:visited {
-    color: #b200e9;
-    color: var(--link-color-visited);
+    /* color: var(--mg-blue); */
+    color: var(--mg-purple);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -226,16 +259,14 @@ a:focus {
 }
 
 a:hover {
-    color: #ff7f50;
-    color: var(--link-color-hover);
+    color: var(--mg-orange);
     /* text-decoration: none; */
     text-decoration: underline;
     transition: color 0.3s;
 }
 
 a:active {
-    color: #ff7f50;
-    color: var(--link-color-hover);
+    color: var(--mg-orange);
     /* text-decoration: none; */
     text-decoration: underline;
 }
@@ -263,22 +294,56 @@ a:not([href]):hover {
 a[href]:hover::after {
     width: 100%;
     left: 0;
-    background-color: #ff7f50;
-    background-color: var(--link-color-hover);
+    background-color: var(--mg-orange);
     transition: width 0.3s, left 0.3s, background-color 1s;
 }
 
 a[href]:active::after {
-    background-color: #ff7f50;
-    background-color: var(--link-color-hover);
+    background-color: var(--mg-orange);
     transition: background-color 1s;
 } */
+
+/* you could alternatively only use the .link pseudo-elements on select links and not all of them by default by applying the .link class to just those links */
+
+/* .link {
+    position: relative;
+    padding-top: 0.25rem;
+    display: inline-block;
+    transition: 0.3s;
+    color: var(--mg-blue);
+}
+
+.link::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    height: 1px;
+    content: '';
+    background-color: transparent;
+    transition: width 0.3s, left 0.3s, background-color 1s;
+}
+
+.link:hover {
+    color: var(--mg-orange);
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.link:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: var(--mg-orange);
+    transition: width 0.3s, left 0.3s, background-color 1s;
+} */
+
+/* end link classes */
 
 pre,
 code,
 kbd,
 samp {
-    font-family: Consolas, "Courier New", Courier, monospace;
+    font-family: Consolas, 'Courier New', Courier, monospace;
     font-size: 1em;
 }
 
@@ -324,7 +389,7 @@ kbd kbd {
 }
 
 figure {
-    margin: 0 0 1rem;
+    margin: 0;
 }
 
 img {
@@ -397,16 +462,17 @@ select {
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
     -webkit-appearance: button;
+    padding: 0 0.25rem;
 }
 
 button:not(:disabled),
-[type="button"]:not(:disabled),
-[type="reset"]:not(:disabled),
-[type="submit"]:not(:disabled) {
+[type='button']:not(:disabled),
+[type='reset']:not(:disabled),
+[type='submit']:not(:disabled) {
     cursor: pointer;
 }
 
@@ -415,10 +481,10 @@ button:not(:disabled),
     border-style: none;
 }
 
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
     -webkit-appearance: textfield;
 }
 
@@ -429,17 +495,17 @@ textarea {
 
 fieldset {
     min-width: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
+    padding: 0.50rem;
+    border: 1px rgba(0, 0, 0, 0.25) solid;
+    margin: 1rem auto;
 }
 
 legend {
-    float: left;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    background-color: #f0f0f0;
+    border: 1px rgba(0, 0, 0, 0.25) solid;
+    padding: 0.25rem 1rem;
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 0.55vw + 0.55rem, 1.20rem);
     line-height: inherit;
     color: inherit;
     white-space: normal;
@@ -459,7 +525,7 @@ progress {
     line-height: 0;
 }
 
-[type="search"] {
+[type='search'] {
     outline-offset: -2px;
     -webkit-appearance: textfield;
 }
@@ -530,16 +596,19 @@ template {
     position: sticky;
 }
 
+/* use with the <main> element on pages */
 .main-container {
-    flex: 1;
+    /* enable flex: 1; on the next line for full or semi-full height websites */
+    /* flex: 1; */
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     max-width: 1334px;
-    background-color: rgba(233, 238, 238, 0.5);
+    background-color: #ffffff;
     padding: 1rem;
 }
 
+/* use with elements like <header> and <footer> */
 .container {
     width: 100%;
     margin-left: auto;
@@ -554,29 +623,13 @@ template {
 }
 
 @media (min-width: 480px) {
-    .main-container,
-    .container {
-        width: calc(100% - 1rem);
-    }
 }
 
 @media (min-width: 768px) {
-    .main-container,
-    .container {
-        width: calc(100% - 2rem);
-    }
 }
 
 @media (min-width: 1024px) {
-    .main-container,
-    .container {
-        width: calc(100% - 2rem);
-    }
 }
 
 @media (min-width: 1366px) {
-    .main-container,
-    .container {
-        width: calc(100% - 2rem);
-    }
 }

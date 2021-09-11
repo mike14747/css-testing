@@ -1,0 +1,158 @@
+.body {
+    background-color: var(--mg-yellow-pale);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    min-width: 320px;
+    max-width: 768px;
+    height: 100px;
+    background-color: var(--mg-gray-2);
+    margin: 0 auto;
+    box-shadow: 0 2px 0 0 var(--mg-green);
+}
+
+.header-left {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.50rem 0 0.5rem 0.50rem;
+}
+
+h1.heading {
+    font-size: clamp(1.4rem, 1vw + 0.9rem, 2.1rem);
+    color: var(--mg-red-dark);
+    margin: 0;
+    font-weight: bolder;
+}
+
+.sub-heading {
+    color: var(--mg-gray-7);
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.55vw + 0.55rem, 1.20rem);
+    margin: 0;
+}
+
+.logo-container {
+    background-color: var(--mg-yellow-pale);
+    border-radius: 50%;
+    width: 20%;
+    min-width: 60px;
+    max-width: 80px;
+    height: auto;
+    box-shadow: 0 0 0 1px var(--mg-gray-5), 5px 5px 5px 0px var(--mg-gray-4);
+    margin-right: 0.75rem;
+    text-align: center;
+    transition: filter 0.3s
+}
+
+.logo-container:hover {
+    /* background-color: var(--mg-yellow-pale); */
+    box-shadow: 0 0 0 1px var(--mg-gray-6), 5px 5px 5px 0px var(--mg-gray-5);
+    filter: brightness(1.1);
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.logo {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+}
+
+.logo:hover {
+    animation: rotate 0.25s linear;
+}
+
+.nav {
+    flex: 0 0 auto;
+    margin: auto 0;
+    position: relative;
+    padding: 0.50rem 0.50rem 0.50rem 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+nav::before {
+    color: var(--mg-dark);
+    content: '\2630';
+    font-weight: normal;
+    font-size: 2.5rem;
+    padding: 0 0 0 2.5rem; /* the large padding-left value is assuming the nav 'sandwich' is on the right and it allows for more hover space to the left of it  */
+}
+
+ul.main-content {
+    display: none;
+    position: absolute;
+    right: 0.50rem;
+    padding: 0;
+    margin: 0;
+    background-color: var(--mg-white);
+    list-style-type: none;
+    width: auto;
+    min-width: 304px;
+    max-width: calc(100% - 1rem);
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 4px 8px 8px 0px var(--mg-gray-2);
+    /* border: 1px var(--mg-red) solid; */
+    transition: background-color 0.3s;
+}
+
+ul.main-content > li > a {
+    margin: 0;
+    padding: 1.5rem 0.5rem;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    border-bottom: 1px var(--mg-gray-2) solid;
+    line-height: 1; /* since this text is not allowed to wrap, setting the line-height to 1 gives more control over the vertical padding */
+    transition: color 0.3s;
+}
+
+ul.main-content > li:last-child > a {
+    border-bottom: 0;
+}
+
+ul.main-content > li > a:hover {
+    background-color: rgba(27, 82, 120, 0.75);
+    color: var(--mg-white);
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav:hover ul.main-content,
+ul.main-container:hover {
+    display: block;
+}
+
+li.expandable {
+    position: relative;
+    /* display: block; */
+}
+
+ul.sub-content {
+    display: none;
+    position: absolute;
+    left: -500px;
+}
+
+ul.main-content > li.expandable:hover > ul.sub-content {
+    display: block;
+    z-index: 2;
+}

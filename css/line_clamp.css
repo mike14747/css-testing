@@ -1,0 +1,11 @@
+article {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.line-clamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
